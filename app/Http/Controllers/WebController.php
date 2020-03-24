@@ -17,8 +17,7 @@ class WebController extends Controller
     }
 
     public function product($id){
-        $product = Product::find($id);// tra ve 1 object Product theo id
-   //     $category = Category::find($product->category_id);
+        $product = Product::find($id);
         $category_products = Product::where("category_id",$product->category_id)->where('id',"!=",$product->id)->take(10)->get();
         $brand_products = Product::where("brand_id",$product->brand_id)->where('id',"!=",$product->id)->take(10)->get();
         return view('product_view',['product'=>$product,'category_products'=>$category_products,'brand_products'=>$brand_products]);

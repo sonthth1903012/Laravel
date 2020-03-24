@@ -16,7 +16,8 @@ return [
     */
 
     'default' => 'pgsql',
-//    ('DB_CONNECTION', 'mysql'),
+//    env('DB_CONNECTION', 'mysql'),
+
 
     /*
     |--------------------------------------------------------------------------

@@ -53,32 +53,10 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="Catagori.html">Catagori</a></li>
-                                        <li class="hot"><a href="#">Latest</a>
-                                            <ul class="submenu">
-                                                <li><a href="product_list.html"> Product list</a></li>
-                                                <li><a href="single-product.html"> Product Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog.html">Blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="single-blog.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Pages</a>
-                                            <ul class="submenu">
-                                                <li><a href="login">Login</a></li>
-                                                <li><a href="cart">Card</a></li>
-                                                <li><a href="elements.html">Element</a></li>
-                                                <li><a href="about.html">About</a></li>
-                                                <li><a href="confirmation.html">Confirmation</a></li>
-                                                <li><a href="cart.html">Shopping Cart</a></li>
-                                                <li><a href="checkout.html">Product Checkout</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{url("/")}}">Home</a></li>
+                                        @foreach(\App\Category::all() as $c)
+                                            <li><a href="{{url("/danh-muc/{$c->id}")}}">{{$c->category_name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </nav>
                             </div>
@@ -108,7 +86,7 @@
                                         @endif
                                     </div>
                                 </li>
-                                <li class="d-none d-lg-block"> <a href="login" class="btn header-btn">Sign in</a></li>
+                                <li class="d-none d-lg-block"> <a href="{{"login"}}" class="btn header-btn">Sign in</a></li>
                             </ul>
                         </div>
                         <!-- Mobile Menu -->

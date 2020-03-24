@@ -41,12 +41,12 @@ $factory->define(\App\Product::class,function (Faker $faker){
     return [
         'product_name' => $faker->unique()->name,
         'product_desc' => $faker->title,
-        'thumbnail' => 'img/products/'.random_int(1,12).'.jpg',
-        'gallery'   =>  'img/products/'.random_int(1,12).'.jpg'.",".'img/products/'.random_int(1,12).'.jpg',
-        'price' => random_int(1,1000),
-        'quantity'=>  random_int(1,100),
-        'category_id'=> random_int(1,3),// vi vua chay random 100 category
-        'brand_id'=> random_int(1,5), // vi vua chay random 100 category
+        'thumbnail' => 'assets/img/categori/'.random_int(1,6).'.png',
+        'gallery'   =>  'assets/img/categori/'.random_int(1,6).'.png'.",".'assets/img/categori/'.random_int(1,6).'.png',
+        'price' => random_int(25,900),
+        'quantity'=>  random_int(1,40),
+        'category_id'=> random_int(1,3),
+        'brand_id'=> random_int(1,5),
     ];
 });
 
