@@ -53,10 +53,8 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="{{url("/")}}">Home</a></li>
-                                        @foreach(\App\Category::all() as $c)
-                                            <li><a href="{{url("/danh-muc/{$c->id}")}}">{{$c->category_name}}</a></li>
-                                        @endforeach
+                                        <li><a href="{{"login"}}">Home</a></li>
+                                        <li><a href="{{"login"}}">Category</a></li>
                                     </ul>
                                 </nav>
                             </div>
