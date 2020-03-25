@@ -54,7 +54,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{{"login"}}">Home</a></li>
-                                        <li><a href="{{"login"}}">Category</a></li>
+                                        <li><a href="{{"cart"}}">Category</a></li>
                                     </ul>
                                 </nav>
                             </div>
