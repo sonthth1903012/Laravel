@@ -16,7 +16,9 @@ Route::prefix("admin")->middleware(['auth',"check_admin"])->group(function (){
 //Route::METHOD(path_string,HANDLE_FUNCTION);
 // Method: post get put delete ... CRUD
 
-
+use App\Student;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Unique;
 
 Route::get("/","WebController@home");
 // Route::METHOD(path_string,Controller@function_in_controller);
@@ -26,6 +28,37 @@ Route::get("/cart","WebController@cart")->middleware("auth");
 Route::get("/clear-cart","WebController@clearCart")->middleware("auth");
 Route::get("/remove-product/{id}","WebController@removeProduct")->middleware("auth");
 
+
+
+
+Route::get('/student', function () {
+    $student_list = Student::all();
+    return view('welcome', ["list" => $student_list]);
+});
+Route::get('/add', function () {
+    return view('add_student');
+});
+Route::post('/add-student', function (Request $request) {
+    $request->validate([
+        "name" => "required|string",
+        "age" => "required|numeric",
+        "address" => "required|string",
+        "tel" => "required|string"
+    ]);
+    try {
+        Student::create([
+            "name" => $request->get("name"),
+            "age" => $request->get("age"),
+            "address" => $request->get("address"),
+            "telephone" => $request->get("tel")
+        ]);
+    } catch (\Exception $e) {
+        return redirect()->back();
+    }
+    return redirect()->to("/student");
+});
+
+
 Auth::routes();
 
 Route::get('/logout', function (){
@@ -33,3 +66,7 @@ Route::get('/logout', function (){
     session()->flush();
     return redirect()->to("/login");
 });
+
+
+
+

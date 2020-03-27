@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKiemtra extends Migration
+class CreateStudent extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateKiemtra extends Migration
      */
     public function up()
     {
-        Schema::create('kiemtra', function (Blueprint $table) {
+        Schema::create('student', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name',191)->unique();
-            $table->string('age')->nullable();
-            $table->string('address', 45)->nullable();
-            $table->string('phone')->nullable();
+            $table->string('name');
+            $table->tinyInteger('age');
+            $table->string('address');
+            $table->string('telephone');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ class CreateKiemtra extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('student');
     }
 }
