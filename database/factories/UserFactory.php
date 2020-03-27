@@ -56,7 +56,7 @@ $factory->define(\App\Student::class,function (Faker $faker){
         'name' => $faker->unique()->name,
         'age' => random_int(15,40),
         'address' => $faker->unique()->address,
-        'phone'   => random_int(323225678,999999999),
+        'telephone'   => random_int(323225678,999999999),
     ];
 });
 
