@@ -53,8 +53,8 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="{{"login"}}">Home</a></li>
-                                        <li><a href="{{"cart"}}">Category</a></li>
+                                        <li><a href="{{"/"}}">Home</a></li>
+                                        <li><a href="{{"/"}}">Category</a></li>
                                     </ul>
                                 </nav>
                             </div>
