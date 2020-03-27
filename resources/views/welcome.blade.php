@@ -8,18 +8,18 @@
 </head>
 <body>
 <div class="container">
-    <h3>Student list</h3>
+    <h3 style="text-decoration: underline; text-transform: uppercase">Student list</h3>
 
     <div class="py-4">
-        <a href="{{url('/add')}}" class="btn btn-outline-success">Add Student</a>
+        <a href="{{url('/add')}}" class="btn btn-outline-danger">Add Student</a>
     </div>
-    <table class="table tables-striped">
+    <table class="table tables-dark">
         <thead>
         <th>ID</th>
         <th>Name</th>
         <th>Age</th>
         <th>Address</th>
-        <th>telephone</th>
+        <th>Phone</th>
         </thead>
         <tbody>
         @foreach($list as $s)

@@ -28,7 +28,7 @@
             <label for="tel">Telephone:</label>
             <input type="text" class="form-control" id="tel" name="tel" value="{{old('tel')}}" required>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-danger">Submit</button>
     </form>
 
 </div>
