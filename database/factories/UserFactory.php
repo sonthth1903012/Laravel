@@ -50,3 +50,13 @@ $factory->define(\App\Product::class,function (Faker $faker){
     ];
 });
 
+
+$factory->define(\App\Kiemtra::class,function (Faker $faker){
+    return [
+        'name' => $faker->unique()->name,
+        'age' => random_int(15,40),
+        'address' => $faker->unique()->address,
+        'phone'   => random_int(323225678,999999999),
+    ];
+});
+
