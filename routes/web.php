@@ -58,7 +58,6 @@ Route::post('/add-student', function (Request $request) {
     } catch (\Exception $e) {
         return redirect()->back();
     }
-    Mail::to('sonthth1903012@fpt.edu.vn')->send(new SendMail());
     return redirect()->to("/student");
 });
 
