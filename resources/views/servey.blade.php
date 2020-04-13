@@ -11,7 +11,7 @@
     <h3 style="text-decoration: underline; text-transform: uppercase">Servey</h3>
 
     <div class="py-4">
-        <a href="{{url('/add/servey')}}" class="btn btn-outline-danger">Add Student</a>
+        <a href="{{url('/add-servey')}}" class="btn btn-outline-danger">Add Servey</a>
     </div>
     <table class="table tables-dark">
         <thead>
