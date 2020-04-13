@@ -47,7 +47,7 @@
                 },
                 error: (e) => {
                     console.log(e.responseJSON);
-                    $("#notification").thml(e.reponseJSOn.message);
+                    $("#notification").html(e.responseJSON.message);
                 }
             });
         });
