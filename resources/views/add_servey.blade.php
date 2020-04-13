@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add student</title>
+    <title>Servey</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 </head>
 <body>
@@ -25,7 +25,7 @@
             <input type="text" class="form-control" id="tel" name="tel" value="{{old('telephone')}}" required>
         </div>
         <div class="form-group">
-            <label for="feedback">Feedback</label>
+            <label for="feedback">Feedback:</label>
             <input type="textarea" class="form-control" id="feedback" name="feedback" value="{{old('feedback')}}" required>
         </div>
         <button type="submit" class="btn btn-danger">Submit</button>
