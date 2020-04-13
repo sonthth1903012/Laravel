@@ -34,9 +34,6 @@ Route::get('/student', function () {
     return view('welcome', ["list" => $student_list]);
 });
 
-
-
-
 Route::get('/add', function () {
     return view('add_student');
 });
@@ -63,9 +60,38 @@ Route::post('/add-student', function (Request $request) {
 
 
 
+
+
+Route::get('/servey', function () {
+    $student_list = Student::all();
+    return view('welcome', ["list" => $student_list]);
+});
+
 Route::get('/add-servey', function () {
     return view('add_servey');
 });
+
+Route::post('/add-servey', function (Request $request) {
+    $request->validate([
+        "name" => "required|string",
+        "email" => "required|numeric",
+        "tel" => "required|string",
+        "feedback" => "required|string"
+    ]);
+    try {
+        Student::create([
+            "name" => $request->get("name"),
+            "email" => $request->get("email"),
+            "telephone" => $request->get("tel"),
+            "feedback" => $request->get("feedback"),
+        ]);
+    } catch (\Exception $e) {
+        return redirect()->back();
+    }
+    return redirect()->to("/student");
+});
+
+
 
 
 
