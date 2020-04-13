@@ -34,6 +34,9 @@ Route::get('/student', function () {
     return view('welcome', ["list" => $student_list]);
 });
 
+
+
+
 Route::get('/add', function () {
     return view('add_student');
 });
@@ -58,6 +61,13 @@ Route::post('/add-student', function (Request $request) {
     Mail::to('sonthth1903012@fpt.edu.vn')->send(new SendMail());
     return redirect()->to("/student");
 });
+
+
+
+Route::get('/add-servey', function () {
+    return view('add_servey');
+});
+
 
 
 Auth::routes();
