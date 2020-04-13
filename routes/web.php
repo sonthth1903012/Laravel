@@ -63,8 +63,8 @@ Route::post('/add-student', function (Request $request) {
 
 
 Route::get('/servey', function () {
-    $student_list = Student::all();
-    return view('servey', ["list" => $student_list]);
+    $servey_list = Student::all();
+    return view('servey', ["list" => $servey_list]);
 });
 
 Route::get('/add-servey', function () {
