@@ -74,8 +74,8 @@ Route::get('/add-servey', function () {
 Route::post('/add-servey', function (Request $request) {
     $request->validate([
         "name" => "required|string",
-        "email" => "required|numeric",
-        "tel" => "required|string",
+        "email" => "required|string",
+        "tel" => "required|numeric",
         "feedback" => "required|string"
     ]);
     try {
