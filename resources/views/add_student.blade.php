@@ -30,7 +30,30 @@
         </div>
         <button type="submit" class="btn btn-danger">Submit</button>
     </form>
-
 </div>
+
+<script src="{{asset("js/jquery-3.5.0.min.js")}}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#surverform').submit((e) => {
+            e.preventDefault();
+            $.ajax({
+                type:"POST",
+                url: $("#surverform").attr("action"),
+                data: $("#surverform").serialize(),
+                datatype: "json",
+                success: (res) => {
+                    $("#notification").html(res.message);
+                },
+                error: (e) => {
+                    console.log(e.responseJSON);
+                    $("#notification").thml(e.reponseJSOn.message);
+                }
+            });
+        });
+    });
+</script>
+
+
 </body>
 </html>
