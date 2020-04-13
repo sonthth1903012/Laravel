@@ -64,7 +64,7 @@ Route::post('/add-student', function (Request $request) {
 
 Route::get('/servey', function () {
     $student_list = Student::all();
-    return view('welcome', ["list" => $student_list]);
+    return view('servey', ["list" => $student_list]);
 });
 
 Route::get('/add-servey', function () {
@@ -88,7 +88,7 @@ Route::post('/add-servey', function (Request $request) {
     } catch (\Exception $e) {
         return redirect()->back();
     }
-    return redirect()->to("/student");
+    return redirect()->to("/servey");
 });
 
 
